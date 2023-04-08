@@ -34,3 +34,11 @@ flex-wrap: wrap;
 align-items: center;
 justify-content: center;
 }
+
+@media (max-width: 800px) {
+  .title-testimonio-container {
+    flex-wrap: unset;
+    flex-direction: column;
+    text-align: center;
+  }
+}
