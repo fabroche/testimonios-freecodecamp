@@ -10,7 +10,14 @@ function Testimonio(props) {
       <div className="contenedor-texto-testimonio">
         <p className="nombre-pais-testimonio"><strong>{props.name}</strong> en {props.country}</p>
         <p className="cargo-empresa-testimonio">{props.charge} en <strong>{props.workplace}</strong></p>
-        <p className="texto-testimonio">"{props.testimonio.replaceAll(props.keywords,"")}<strong>{props.keywords}</strong>"</p>
+        <p className="texto-testimonio">"{props.testimonio.split(props.keywords).map((word)=>( 
+             word === '' 
+             ? <strong>{props.keywords}</strong> 
+             : word.endsWith(' ') 
+             ? [word, <strong>{props.keywords}</strong>] 
+             : word
+        ))}"</p>
+        {console.log(props.testimonio.split(props.keywords))}
       </div>
     </div>
     
